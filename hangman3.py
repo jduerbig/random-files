@@ -14,6 +14,26 @@ for letter in secretWord:
 	guessList.append("_")
 
 
+frame1 = [
+'''
+   +----+
+        |
+        |
+        |
+        |
+        |
+  =========
+  '''      
+
+
+]
+
+for frame in frame1:
+	print(frame)
+	os.system("cls")
+
+
+
 HANGMAN = [ 
 
 
@@ -82,15 +102,19 @@ HANGMAN = [
         '''
         ]
 
-print(secretWord)
+
 
 while True:
-	os.system("cls")
-	for frame in HANGMAN:
-		print(frame)
-		print(guessList)
-		time.sleep(.2)
+	guess = input("guess a letter A-Z")
+	if guess in secretWord:
+		print("Letter in word")
+	else:
 		os.system("cls")
+		for frame in HANGMAN:
+			print(frame)
+			os.system("cls")
+			print(guessList)
+
 
 
 
